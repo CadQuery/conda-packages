@@ -15,7 +15,7 @@ steps:
 
 # install mamba
 - bash: |
-      conda config --set anaconda_upload yes --set always_yes yes --set solver libmamba && \
+      conda config --set anaconda_upload yes --set always_yes yes --set solver libmamba --set remote_read_timeout_secs 600 && \
       conda config --add channels conda-forge && \
       conda install -c conda-forge -q mamba conda-devenv libsolv conda-libmamba-solver && \
       mamba info && \
