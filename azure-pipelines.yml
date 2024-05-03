@@ -5,7 +5,7 @@ jobs:
 - template: conda-build.yml
   parameters:
     name: Linux_freeimageplus
-    vmImage: 'ubuntu-16.04'
+    vmImage: 'ubuntu-latest'
     py_maj: 3
     py_min: 6
     location: freeimageplus
@@ -13,7 +13,7 @@ jobs:
 - template:  conda-build.yml
   parameters:
     name: macOS_freeimageplus
-    vmImage: 'macOS-10.13'
+    vmImage: 'macOS-latest'
     py_maj: 3
     py_min: 6
     location: freeimageplus
@@ -21,7 +21,7 @@ jobs:
 - template:  conda-build.yml
   parameters:
     name: Windows_freeimageplus
-    vmImage: 'vs2017-win2016'
+    vmImage: 'windows-latest'
     py_maj: 3
     py_min: 6
     location: freeimageplus
@@ -30,7 +30,7 @@ jobs:
 - template: conda-build.yml
   parameters:
     name: Linux_oce
-    vmImage: 'ubuntu-16.04'
+    vmImage: 'ubuntu-latest'
     py_maj: 3
     py_min: 6
     location: oce-0.18.3
@@ -38,7 +38,7 @@ jobs:
 - template:  conda-build.yml
   parameters:
     name: macOS_oce
-    vmImage: 'macOS-10.13'
+    vmImage: 'macOS-latest'
     py_maj: 3
     py_min: 6
     location: oce-0.18.3
@@ -46,7 +46,7 @@ jobs:
 - template:  conda-build.yml
   parameters:
     name: Windows_oce
-    vmImage: 'vs2017-win2016'
+    vmImage: 'windows-latest'
     py_maj: 3
     py_min: 6
     location: oce-0.18.3
@@ -55,7 +55,7 @@ jobs:
 - template: conda-build.yml
   parameters:
     name: Linux_pythonocc36
-    vmImage: 'ubuntu-16.04'
+    vmImage: 'ubuntu-latest'
     py_maj: 3
     py_min: 6
     location: pythonocc
@@ -63,7 +63,7 @@ jobs:
 - template:  conda-build.yml
   parameters:
     name: macOS_pythonocc36
-    vmImage: 'macOS-10.13'
+    vmImage: 'macOS-latest'
     py_maj: 3
     py_min: 6
     location: pythonocc
@@ -71,7 +71,7 @@ jobs:
 - template:  conda-build.yml
   parameters:
     name: Windows_pythonocc36
-    vmImage: 'vs2017-win2016'
+    vmImage: 'windows-latest'
     py_maj: 3
     py_min: 6
     location: pythonocc
@@ -80,7 +80,7 @@ jobs:
 - template: conda-build.yml
   parameters:
     name: Linux_pythonocc37
-    vmImage: 'ubuntu-16.04'
+    vmImage: 'ubuntu-latest'
     py_maj: 3
     py_min: 7
     location: pythonocc
@@ -88,7 +88,7 @@ jobs:
 - template:  conda-build.yml
   parameters:
     name: macOS_pythonocc37
-    vmImage: 'macOS-10.13'
+    vmImage: 'macOS-latest'
     py_maj: 3
     py_min: 7
     location: pythonocc
@@ -96,7 +96,7 @@ jobs:
 - template:  conda-build.yml
   parameters:
     name: Windows_pythonocc37
-    vmImage: 'vs2017-win2016'
+    vmImage: 'windows-latest'
     py_maj: 3
     py_min: 7
     location: pythonocc
