@@ -1,5 +1,6 @@
 parameters:
   mamba: '2'
+  python: '3.13'
 
 steps:
 
@@ -29,7 +30,7 @@ steps:
 - bash: |
       conda config --set anaconda_upload yes --set always_yes yes --set solver libmamba && \
       conda config --add channels conda-forge && \
-      conda install -c conda-forge -q mamba=${{ parameters.mamba }} micromamba conda-devenv libsolv conda-libmamba-solver && \
+      conda install -c conda-forge -q mamba=${{ parameters.mamba }} python=${{ parameters.python }} micromamba conda-devenv libsolv conda-libmamba-solver && \
       env && \
       conda info && \
       conda list
