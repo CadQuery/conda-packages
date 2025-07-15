@@ -30,6 +30,7 @@ steps:
 - bash: |
       conda config --set anaconda_upload yes --set always_yes yes --set solver libmamba && \
       conda config --add channels conda-forge && \
+      conda config --remove channels main --remove channels r --remove channels msys2 && \
       conda install -c conda-forge -q mamba=${{ parameters.mamba }} python=${{ parameters.python }} micromamba conda-devenv libsolv conda-libmamba-solver && \
       env && \
       conda info && \
