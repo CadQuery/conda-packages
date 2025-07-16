@@ -16,7 +16,7 @@ steps:
   displayName: 'Install mamba, boa; report config and info'
 
 # add to path
-- bash: echo "##vso[task.prependpath]/home/vsts/.local/bin/"
+- bash: echo "##vso[task.prependpath]/Users/runner/.local/bin/"
   condition: eq( variables['Agent.OS'], 'Darwin' )
   displayName: 'Add micromamba to PATH - OSX'
 
@@ -24,6 +24,6 @@ steps:
   condition: eq( variables['Agent.OS'], 'Linux' )
   displayName: 'Add micromamba to PATH - Linux'
 
-- bash: Write-Host "##vso[task.prependpath]/c/Users/VssAdministrator/.local/bin/"
+- bash: echo "##vso[task.prependpath]/c/Users/VssAdministrator/.local/bin/"
   condition: eq( variables['Agent.OS'], 'Windows_NT' )
   displayName: 'Add micromamba to PATH - Windows'
