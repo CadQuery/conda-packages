@@ -7,7 +7,8 @@ steps:
 # install micromamba
 - bash: |
       "${SHELL}" <(curl -L micro.mamba.pm/install.sh) && \
-      source ~/.bashrc && \
+      if [ -f ~/.bash_profile ]; then source ~/.bash_profile; fi && \
+      if [ -f ~/.bashrc ]; then source ~/.bashrc; fi && \
       micromamba install -c conda-forge -q mamba=${{ parameters.mamba }} python=${{ parameters.python }} conda-devenv libsolv conda-libmamba-solver && \
       env && \
       micromamba info && \
