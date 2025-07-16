@@ -13,7 +13,7 @@ steps:
       env && \
       micromamba info && \
       micromamba list && \
-      echo "$(micromamba shell hook --shell bash)" >> .mambastartup
+      echo "$(micromamba shell hook --shell bash)" >> ~/.mambastartup
   displayName: 'Install mamba, boa; report config and info'
 
 # add to path
