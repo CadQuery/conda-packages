@@ -31,6 +31,6 @@ steps:
 - bash: |
       echo "##vso[task.prependpath]/c/Users/VssAdministrator/.local/bin/" && \
       echo "##vso[task.setvariable variable=BASH_ENV]/c/Users/VssAdministrator/.bash_profile" && \
-      ls /c/Users/VssAdministrator/.local/bin/
+      cp /c/Users/VssAdministrator/.local/bin/micromamba /c/Users/VssAdministrator/.local/bin/micromamba.exe
   condition: eq( variables['Agent.OS'], 'Windows_NT' )
   displayName: 'Add micromamba to PATH - Windows'
