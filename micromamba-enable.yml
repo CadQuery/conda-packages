@@ -18,18 +18,19 @@ steps:
 # add to path
 - bash: |
       echo "##vso[task.prependpath]/Users/runner/.local/bin/" && \
-      echo "##vso[task.setvariable variable=BASH_ENV]~/.bash_profile"
+      echo "##vso[task.setvariable variable=BASH_ENV]/Users/runner/.bash_profile"
   condition: eq( variables['Agent.OS'], 'Darwin' )
   displayName: 'Add micromamba to PATH - OSX'
 
 - bash: |
       echo "##vso[task.prependpath]/home/vsts/.local/bin/" && \
-      echo "##vso[task.setvariable variable=BASH_ENV]~/.bashrc"
+      echo "##vso[task.setvariable variable=BASH_ENV]/home/vsts/.bashrc"
   condition: eq( variables['Agent.OS'], 'Linux' )
   displayName: 'Add micromamba to PATH - Linux'
 
 - bash: |
       echo "##vso[task.prependpath]/c/Users/VssAdministrator/.local/bin/" && \
-      echo "##vso[task.setvariable variable=BASH_ENV]~/.bash_profile"
+      echo "##vso[task.setvariable variable=BASH_ENV]/c/Users/VssAdministrator/.bash_profile" && \
+      ls /c/Users/VssAdministrator/.local/bin/
   condition: eq( variables['Agent.OS'], 'Windows_NT' )
   displayName: 'Add micromamba to PATH - Windows'
