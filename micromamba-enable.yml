@@ -36,6 +36,8 @@ steps:
   condition: eq( variables['Agent.OS'], 'Windows_NT' )
   displayName: 'Add micromamba to PATH - Windows'
 
-- powershell: Write-Host "##vso[task.prependpath]C:/Users/VssAdministrator/.local/bin/"
+- script: |
+      Write-Host "##vso[task.prependpath]C:/Users/VssAdministrator/.local/bin/"
+      c:/Users/VssAdministrator/.local/bin/micromamba.exe -y shell init
   condition: eq( variables['Agent.OS'], 'Windows_NT' )
   displayName: 'Add micromamba to PATH - Windows (pwsh)'
