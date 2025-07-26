@@ -37,7 +37,7 @@ steps:
   displayName: 'Add micromamba to PATH - Windows'
 
 - script: |
-      Write-Host "##vso[task.prependpath]C:/Users/VssAdministrator/.local/bin/"
+      echo "##vso[task.prependpath]C:/Users/VssAdministrator/.local/bin/"
       c:/Users/VssAdministrator/.local/bin/micromamba.exe -y shell init
   condition: eq( variables['Agent.OS'], 'Windows_NT' )
   displayName: 'Add micromamba to PATH - Windows (pwsh)'
