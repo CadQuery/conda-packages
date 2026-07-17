@@ -1,6 +1,6 @@
 parameters:
   mamba: '2'
-  python: '3.13'
+  python: '3.14'
 
 steps:
 
