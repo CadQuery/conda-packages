@@ -35,12 +35,12 @@ jobs:
     parameters:
       vmImage: ${{ parameters.vmImage }}
       
-  - bash: mamba create --yes --quiet --name build_env -c conda-forge conda-build boa conda-verify libarchive python=3.13 anaconda-client
+  - bash: mamba create --yes --name build_env -c conda-forge conda-build conda-verify libarchive python=3.13 anaconda-client
     displayName: Create Anaconda environment
     
   - bash: |
       cd ${{ parameters.location }} && \
-      mamba run -n build_env conda mambabuild -c conda-forge --output-folder . . && \
+      mamba run -n build_env conda build -c conda-forge --output-folder . . && \
       full_path=$(mamba run -n build_env conda build --output -c conda-forge --output-folder . . ) && \
       echo $full_path && \
       base_name=$(basename $full_path) && \
@@ -63,7 +63,7 @@ jobs:
     
   - bash: |
       cd ${{ parameters.location }} && \
-      mamba run -n build_env conda mambabuild -c conda-forge . && \
+      mamba run -n build_env conda build -c conda-forge . && \
       cd ..
     displayName: 'Run conda build without upload'
     failOnStderr: false
