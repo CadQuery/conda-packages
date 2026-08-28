@@ -40,8 +40,8 @@ jobs:
     
   - bash: |
       cd ${{ parameters.location }} && \
-      mamba run -n build_env conda mambabuild -c conda-forge -c cadquery --output-folder . . && \
-      full_path=$(mamba run -n build_env conda build --output -c conda-forge -c cadquery --output-folder . . ) && \
+      mamba run -n build_env conda mambabuild -c conda-forge --output-folder . . && \
+      full_path=$(mamba run -n build_env conda build --output -c conda-forge --output-folder . . ) && \
       echo $full_path && \
       base_name=$(basename $full_path) && \
       split_name=($(IFS=-; tmp=($base_name); echo ${tmp[@]})) && \
@@ -63,7 +63,7 @@ jobs:
     
   - bash: |
       cd ${{ parameters.location }} && \
-      mamba run -n build_env conda mambabuild -c conda-forge -c cadquery . && \
+      mamba run -n build_env conda mambabuild -c conda-forge . && \
       cd ..
     displayName: 'Run conda build without upload'
     failOnStderr: false
