@@ -35,7 +35,7 @@ jobs:
     parameters:
       vmImage: ${{ parameters.vmImage }}
       
-  - bash: mamba create --yes --quiet --name build_env -c conda-forge conda-build boa conda-verify libarchive python=3.12 anaconda-client
+  - bash: mamba create --yes --quiet --name build_env -c conda-forge conda-build boa conda-verify libarchive python=3.13 anaconda-client
     displayName: Create Anaconda environment
     
   - bash: |
