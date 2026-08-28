@@ -4,8 +4,6 @@ parameters:
   py_maj: '3'
   py_min: '6'
   location: 'conda'
-  conda_bld: '3.16.3'
-  conda: '22.9.0'
 
 jobs:
 - job: ${{ parameters.name }}_${{ parameters.py_maj }}_${{ parameters.py_min }}
